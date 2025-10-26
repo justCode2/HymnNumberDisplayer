@@ -1,0 +1,28 @@
+.hymn-number-display {
+    position: fixed;
+    right: 0; /* Changed from 30px to 0 */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: #333;
+    padding: 10px 5px 10px 10px; /* Reduced right padding */
+    border-radius: 6px 0 0 6px; /* Only round the left corners */
+    font-size: 18px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 60px; /* Reduced min-width */
+    text-align: center;
+}
+
+.hymn-number {
+    padding: 4px;
+    margin-right: -1px; /* Ensure border aligns with screen edge */
+    border-radius: 3px 0 0 3px; /* Only round the left corners */
+    font-weight: normal;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #666;
+    border: 1px solid #e0e0e0;
+    border-right: none; /* Remove right border since it's against screen edge */
+}

@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Hymn Number Displayer",
+  "version": "1.0",
+  "description": "Displays Burmese and English hymn numbers in a floating div on hymnal.net",
+  "permissions": [],
+  "host_permissions": [
+    "https://www.hymnal.net/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.hymnal.net/*"],
+      "css": ["styles.css"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
