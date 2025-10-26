@@ -1,7 +1,4 @@
 # HymnNumberDisplayer
-Displays hymn numbers in selected languages on hymnal.net on the right side of the page.
-# Hymn Number Displayer
-
 A Chrome extension that enhances hymnal.net by displaying hymn numbers in multiple languages on the right side of the screen.  This allows screen sharing to keep the hymn numbers displayed on screen and support meetings with multiple languages.  There is a maximum limit of 4 languages to display on screen at one time.
 
 ## Features
