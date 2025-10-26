@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Hymn Number Displayer",
   "version": "1.0",
-  "description": "Displays hymn numbers in selected languages in a floating div on hymnal.net",
+  "description": "Displays hymn numbers in selected languages on hymnal.net on the right side of the page.",
   "permissions": ["storage"],
   "host_permissions": [
     "https://www.hymnal.net/*"
@@ -15,8 +15,8 @@
     }
   ],
   "icons": {
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "48": "music-box.png",
+    "128": "music-box.png"
   },
   "options_page": "options.html"
 }
