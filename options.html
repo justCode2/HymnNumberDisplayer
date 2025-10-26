@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hymn Number Displayer Settings</title>
+  <style>
+    body {
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .language-options {
+      margin: 20px 0;
+    }
+    .language-option {
+      margin: 10px 0;
+    }
+    button {
+      margin-top: 20px;
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .status {
+      margin-top: 10px;
+      color: #4CAF50;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Language Settings</h1>
+  <p>Select the languages you want to display:</p>
+  <div class="language-options">
+    <div class="language-option">
+      <input type="checkbox" id="Burmese" value="Burmese">
+      <label for="Burmese">Burmese</label>
+    </div>
+    <div class="language-option">
+      <input type="checkbox" id="Chinese" value="Chinese">
+      <label for="Chinese">Chinese</label>
+    </div>
+    <div class="language-option">
+      <input type="checkbox" id="Cebuano" value="Cebuano">
+      <label for="Cebuano">Cebuano</label>
+    </div>
+    <div class="language-option">
+      <input type="checkbox" id="Dutch" value="Dutch">
+      <label for="Dutch">Dutch</label>
+    </div>
+    <div class="language-option">
+      <input type="checkbox" id="English" value="English">
+      <label for="English">English</label>
+    </div>
+    <div class="language-option">
+      <input type="checkbox" id="French" value="French">
+      <label for="French">French</label>
+    </div>
+    <div class="language-option">
+      <input type="checkbox" id="German" value="German">
+      <label for="German">German</label>
+    </div>
+    <div class="language-option">
+      <input type="checkbox" id="Korean" value="Korean">
+      <label for="Korean">Korean</label>
+    </div>
+    <div class="language-option">
+      <input type="checkbox" id="LSM YP" value="LSM YP">
+      <label for="LSM YP">LSM YP</label>
+    </div>
+    <div class="language-option">
+      <input type="checkbox" id="Portuguese" value="Portuguese">
+      <label for="Portuguese">Portuguese</label>
+    </div>
+    <div class="language-option">
+      <input type="checkbox" id="Russian" value="Russian">
+      <label for="Russian">Russian</label>
+    </div>
+    <div class="language-option">
+      <input type="checkbox" id="Spanish" value="Spanish">
+      <label for="Spanish">Spanish</label>
+    </div>
+    <div class="language-option">
+      <input type="checkbox" id="Tagalog" value="Tagalog">
+      <label for="Tagalog">Tagalog</label>
+    </div>
+  </div>
+  <button id="save">Save</button>
+  <div id="status" class="status">Settings saved!</div>
+  <script src="options.js"></script>
+</body>
+</html>
