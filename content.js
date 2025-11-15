@@ -3,7 +3,7 @@ function createHymnNumberDisplay () {
   // Get selected languages from storage
   chrome.storage.sync.get(
     {
-      selectedLanguages: ['E30'] // Default to English if no languages are selected
+      selectedLanguages: ['English'] // Default to English if no languages are selected
     },
     function (items) {
       // Create the container if it doesn't exist
@@ -18,25 +18,42 @@ function createHymnNumberDisplay () {
       const selectedLanguages = items.selectedLanguages
       let numbersHTML = ''
       let hasNumbers = false
+      let englishNumber = null
 
       // Find and display numbers for each selected language
       selectedLanguages.forEach(language => {
         // Find the span element that has this language name in its title attribute
-        let label = document.querySelector(`span[title="${language}"]`)
+        let label = document.querySelector(`span[title="${language}"]`) || document.querySelector(`a[title="${language}"]`)
+        let number = null
 
         if (label) {
           // Use whatever number is in the span
-          const number = label.textContent.trim()
-          numbersHTML += `<div class="hymn-number" title="${language}">${number}</div>`
+          number = label.textContent.trim()
           hasNumbers = true
-        } else {
-          label = document.querySelector(`a[title="${language}"]`)
-          if (label) {
-            // Use whatever number is in the span
-            const number = label.textContent.trim()
-            numbersHTML += `<div class="hymn-number" title="${language}">${number}</div>`
-            hasNumbers = true
+        }
+
+        // If Burmese is selected but not found, try concordance lookup
+        if (!number && language === 'Burmese') {
+          // First, try to find the English hymn number
+          if (!englishNumber) {
+            let englishLabel = document.querySelector('span[title="English"]') || document.querySelector('a[title="English"]')
+            if (englishLabel) {
+              englishNumber = parseInt(englishLabel.textContent.trim())
+            } 
           }
+
+          // If we have the English number, look it up in the concordance
+          if (englishNumber && typeof lookupBurmeseNumber === 'function') {
+            const concordanceNumber = lookupBurmeseNumber(englishNumber)
+            if (concordanceNumber) {
+              number = concordanceNumber.toString()
+              hasNumbers = true
+            }
+          }
+        }
+
+        if (number) {
+          numbersHTML += `<div class="hymn-number" title="${language}">${number}</div>`
         }
       })
 

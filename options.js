@@ -41,7 +41,7 @@ function saveOptions() {
 // Restore the saved language selections
 function restoreOptions() {
   chrome.storage.sync.get({
-    selectedLanguages: ['E30'] // Default to English if no languages are selected
+    selectedLanguages: ['English'] // Default to English if no languages are selected
   }, function(items) {
     const languages = items.selectedLanguages;
     languages.forEach(lang => {

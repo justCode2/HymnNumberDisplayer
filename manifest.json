@@ -11,7 +11,7 @@
     {
       "matches": ["https://www.hymnal.net/*"],
       "css": ["styles.css"],
-      "js": ["content.js"]
+      "js": ["concordance.js", "content.js"]
     }
   ],
   "icons": {
