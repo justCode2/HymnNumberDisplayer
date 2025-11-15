@@ -36,15 +36,17 @@ function createHymnNumberDisplay () {
         if (!number && language === 'Burmese') {
           // First, try to find the English hymn number
           if (!englishNumber) {
-            let englishLabel = document.querySelector('span[title="English"]') || document.querySelector('a[title="English"]')
+            let englishLabel = document.querySelector(`span[title="English"]`) || document.querySelector(`a[title="English"]`)
             if (englishLabel) {
-              englishNumber = parseInt(englishLabel.textContent.trim())
+              englishNumber = englishLabel.textContent.trim();
             } 
           }
 
           // If we have the English number, look it up in the concordance
-          if (englishNumber && typeof lookupBurmeseNumber === 'function') {
-            const concordanceNumber = lookupBurmeseNumber(englishNumber)
+          if (englishNumber) {
+            // Remove 'E' prefix if present and extract numeric value
+            const numericEnglish = parseInt(englishNumber.replace(/^E/, ''));
+            const concordanceNumber = lookupBurmeseNumber(numericEnglish);
             if (concordanceNumber) {
               number = concordanceNumber.toString()
               hasNumbers = true

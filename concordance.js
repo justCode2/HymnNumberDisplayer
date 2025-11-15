@@ -62,5 +62,5 @@ const hymnConcordance = {
 // Function to lookup Burmese hymn number from concordance
 function lookupBurmeseNumber (englishNumber) {
   const burmeseNumber = hymnConcordance[englishNumber]
-  return burmeseNumber !== undefined ? burmeseNumber : null
+  return burmeseNumber !== undefined ? `B${burmeseNumber}` : null
 }
